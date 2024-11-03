@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    private let viewModel = ViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List(viewModel.taskList, id: \.description) { task in
+            Text(task.description)
         }
-        .padding()
     }
 }
 
